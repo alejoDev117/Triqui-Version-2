@@ -12,7 +12,7 @@ public class Tablero {
             tablero.put(i, new Casilla(i));
         }
     }
-
+//dfsdfsd
     public Map<Byte, Casilla> getTablero() {
         Map <Byte, Casilla> tableroClon = new HashMap<>();
         for (byte i = 1; i <= 9 ; i++) {
