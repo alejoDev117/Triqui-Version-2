@@ -5,6 +5,8 @@ public class Casilla {
     private byte posicion;
     private String simbolo;
 
+    //Lo quiero mucho profe
+
     private Casilla(byte posicion, String simbolo) {
         this.simbolo = simbolo;
         this.posicion = posicion;
