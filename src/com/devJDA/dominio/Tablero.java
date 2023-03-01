@@ -1,6 +1,8 @@
 package com.devJDA.dominio;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Tablero {
@@ -20,4 +22,16 @@ public class Tablero {
         }
         return tableroClon;
     }
+    private boolean ternaEsValida (byte posicionUno, byte posicionDos, byte posicionTres) {
+
+        List<Casilla> casillas = new ArrayList<>();
+
+        casillas.add(tablero.get(posicionUno));
+        casillas.add(tablero.get(posicionDos));
+        casillas.add(tablero.get(posicionTres));
+
+        return casillas.stream().map(Casilla::getSimbolo).distinct().count() == 1 && casillas.get(0).estaMarcada();
+    }
+
 }
+

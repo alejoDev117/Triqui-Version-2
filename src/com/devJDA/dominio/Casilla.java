@@ -5,7 +5,7 @@ public class Casilla {
     private byte posicion;
     private String simbolo;
 
-
+//
 
     private Casilla(byte posicion, String simbolo) {
         this.simbolo = simbolo;
@@ -27,7 +27,7 @@ public class Casilla {
     private boolean cadenaEsVaciaONula(String cadena) {
         return (cadena == null || "".intern() == cadena.trim().intern());
     }
-    private boolean estaMarcada(){
+    public boolean estaMarcada(){
         return (!cadenaEsVaciaONula(simbolo));
     }
     public String getSimbolo() {
