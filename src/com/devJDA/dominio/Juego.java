@@ -6,6 +6,7 @@ public class Juego {
 
     private Jugador proximoTurno;
     private boolean JuegoEnCurso;
+    private Tablero tablero;
 
 
 }
