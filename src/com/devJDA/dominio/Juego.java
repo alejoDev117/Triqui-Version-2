@@ -5,5 +5,7 @@ public class Juego {
     private Jugador jugador2;
 
     private Jugador proximoTurno;
+    private boolean JuegoEnCurso;
+
 
 }
