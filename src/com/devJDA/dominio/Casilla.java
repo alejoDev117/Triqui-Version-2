@@ -1,7 +1,6 @@
 package com.devJDA.dominio;
 
 public class Casilla {
-    //Atributos
     private byte posicion;
     private String simbolo;
 
