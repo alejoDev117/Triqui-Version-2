@@ -8,6 +8,9 @@ import java.util.Map;
 public class Tablero {
     private Map<Byte, Casilla> tablero = new HashMap<>();
 
+    public Tablero(){
+        inicializar();
+    }
 
     private void inicializar(){
         for (byte i = 1; i <= 9 ; i++) {
@@ -22,7 +25,15 @@ public class Tablero {
         }
         return tableroClon;
     }
-    private boolean ternaEsValida (byte posicionUno, byte posicionDos, byte posicionTres) {
+
+    public void marcarEnTablero(byte posicion, String simbolo){
+       if(tablero.get(posicion).estaMarcada()){
+           throw new RuntimeException("No es posible marcar en tablero, casilla ocupada");
+       }
+       tablero.get(posicion).marcar(simbolo);
+    }
+
+     boolean ternaEsValida (byte posicionUno, byte posicionDos, byte posicionTres) {
 
         List<Casilla> casillas = new ArrayList<>();
 
@@ -32,6 +43,13 @@ public class Tablero {
 
         return casillas.stream().map(Casilla::getSimbolo).distinct().count() == 1 && casillas.get(0).estaMarcada();
     }
-
+    public byte casillasMarcadas(){
+        byte casillasConMarca = 0;
+        for (int i = 1; i <=9 ; i++) {
+            if(getTablero().get(i).estaMarcada()){
+                casillasConMarca +=1;
+            }
+        }
+        return casillasConMarca;
+    }
 }
-
