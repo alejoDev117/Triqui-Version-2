@@ -14,8 +14,10 @@ public class Juego {
     }
 
     public void cambiarTurno(){
-        Jugador empieza = jugador1;
-        jugador1 = jugador2;
-        jugador2 = empieza;
+        if(proximoTurno.equals(jugador1)){
+            proximoTurno = jugador2;
+        }else{
+            proximoTurno = jugador1;
+        }
         }
 }
