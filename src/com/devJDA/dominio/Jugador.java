@@ -33,7 +33,7 @@ public class Jugador {
         return simbolo;
     }
 
-    private void setSimbolo(String simbolo) {
+    public void setSimbolo(String simbolo) {
         if(simboloEsVacioONulo(simbolo)){
             throw new RuntimeException("No es posible asignar un avatar vacio o nulo");
         }
@@ -49,6 +49,8 @@ public class Jugador {
         }
         this.nombre = nombre.trim();
     }
+
+
 
 
 }
