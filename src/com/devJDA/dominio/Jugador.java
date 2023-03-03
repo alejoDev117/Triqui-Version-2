@@ -10,21 +10,38 @@ public class Jugador {
         this.simbolo = "NA";
     }
 
-    public void seleccionarPosicion(byte posicion){
-
+    public byte seleccionarPosicion(byte posicion){
+        if(posicionEsCorrecta(posicion)) {
+            return posicion;
+        }
+        throw new RuntimeException("Error, posicion fuera de rango");
     }
 
     public void cambiarSimbolo(String simbolo){
         setSimbolo(simbolo);
     }
 
-    public void inciarManualmente(Jugador jugadorQueInicia){
-
+    public Jugador inciarManualmente(Jugador jugadorQueInicia) {
+        if (jugadorEsCorrecto(jugadorQueInicia)) {
+            return jugadorQueInicia;
+        }
+        throw new RuntimeException("Error, jugador es nulo");
     }
     private boolean simboloEsVacioONulo(String simbolo){
         return simbolo == null || simbolo.trim().equals("");
     }
-
+    private boolean posicionEsCorrecta(byte posicion){
+        if(posicion >1 && posicion <=9){
+            return true;
+        }
+        return false;
+    }
+    private boolean jugadorEsCorrecto(Jugador jugador){
+        if(jugador != null){
+            return true;
+        }
+        return false;
+    }
     public String getNombre() {
         return nombre;
     }
@@ -33,7 +50,7 @@ public class Jugador {
         return simbolo;
     }
 
-    public void setSimbolo(String simbolo) {
+    private void setSimbolo(String simbolo) {
         if(simboloEsVacioONulo(simbolo)){
             throw new RuntimeException("No es posible asignar un avatar vacio o nulo");
         }
